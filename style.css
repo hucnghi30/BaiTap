@@ -1,0 +1,226 @@
+
+body{
+    position: relative;
+}
+
+.bia {
+    filter: blur(1px); /* Áp dụng hiệu ứng làm mờ với giá trị blur là 1px */
+    position: fixed; /* Vị trí cố định, không di chuyển khi cuộn trang */
+    top: 0; /* Đặt cách cạnh trên của trang 0px */
+    left: 0; /* Đặt cách cạnh trái của trang 0px */
+    width: 100%; /* Chiều rộng 100% của màn hình */
+    height: 200px; /* Chiều cao của lớp là 200px */
+    background-color: rgb(114, 72, 79); /* Màu nền của lớp là màu đỏ tía */
+    z-index: 1000; /* Độ ưu tiên hiển thị cao nhất, lớp này sẽ được xếp chồng lên các lớp khác */
+}
+
+.container {
+    position: absolute; /* Đặt vị trí tuyệt đối so với phần tử chứa */
+    top: 177px; /* Đặt cách cạnh trên của phần tử chứa 200px */
+}
+
+.h-menu {
+    /*magin Bỏ khoảng cách ngoài */
+    background-color: rgb(22, 184, 122); /* Màu nền là màu xanh lá cây nhạt */
+    display: flex; /* Sử dụng Flexbox để sắp xếp các phần tử con */
+    justify-content: space-around; /* Phân bổ đều các mục con trong thanh menu */
+}
+
+.h-menu > li {
+    font-size: 30px; /* Kích thước chữ là 30px */
+    list-style-type: none; /* Loại bỏ dấu chấm đầu dòng của danh sách */
+    padding: 10px; /* Thêm khoảng cách bên trong (padding) cho các mục menu */
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển đổi màu nền mượt trong 0.3 giây khi hover */
+}
+
+.h-menu > li > a {
+    color: #0f0101; /* Màu chữ là màu tối */
+    list-style-type: none; /* Loại bỏ dấu chấm đầu dòng */
+    text-decoration: none; /* xoá bỏ các dấu gách chân */
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển đổi màu nền cho liên kết khi hover */
+}
+
+.h-menu > li > a:hover {
+    color: #d93e3e; /* Đổi màu chữ thành màu đỏ khi di chuột vào */
+}
+
+.h-menu > li > ul {
+    list-style-type: none; /* Loại bỏ dấu chấm đầu dòng của danh sách phụ */
+}
+
+.menu .h-menu > li.has-sub-menu:hover > .sub-menu {
+    display: block; /* Hiển thị menu phụ khi di chuột vào mục cha */
+}
+
+.h-menu > li:hover {
+    background-color: #095d47; /* Đổi màu nền khi di chuột vào mục menu */
+}
+
+.body {
+    display: grid; /* Sử dụng layout grid để tạo khung sắp xếp */
+    grid-template-columns: 1fr 3fr; /* Chia trang thành hai cột với tỉ lệ 1:3 */
+    column-gap: 10px; /* Khoảng cách giữa các cột là 10px */
+}
+
+.Product {
+    display: grid; /* Sử dụng layout grid cho các sản phẩm */
+    grid-template-columns: repeat(3, 1fr); /* Chia mỗi hàng thành 3 cột đều nhau */
+    /* grid-template-rows: auto auto; Đặt chiều cao các hàng tự động */
+}
+
+.has-sub-menu {
+    position: relative; /* Thiết lập vị trí tương đối cho mục có submenu */
+}
+
+.sub-menu {
+    display: none; /* Ẩn menu con khi chưa di chuột vào */
+    position: absolute; /* Vị trí tuyệt đối so với mục cha */
+    list-style-type: none; /* Loại bỏ dấu chấm đầu dòng */
+    color: #0f0101; /* Màu chữ là màu tối */
+    width: 130px; /* Chiều rộng của menu con là 130px */
+    left: -60px; /* Căn trái 15px so với mục cha */
+    top: 54px; /* Căn cách 54px từ trên xuống */
+}
+
+.sub-menu > li {
+    background-color: #03a778; /* Màu nền của menu con là màu xanh lá nhạt */
+    border-radius: 10px; /* Đường viền bo tròn góc */
+    border: 2px solid black; /* Đường viền màu đen dày 2px */
+}
+
+.anh1 {
+    width: 200px; /* Chiều rộng ảnh là 200px */
+    height: 150px; /* Chiều cao ảnh là 150px */
+}
+
+h1 {
+    position: absolute; /* Đặt tiêu đề vị trí tuyệt đối */
+    color: rgb(233, 236, 238); /* Màu chữ là màu xanh nhạt */
+    left: 310px; /* Đặt cách cạnh trái 310px */
+    top: 60px; /* Đặt cách cạnh trên 60px */
+}
+
+.logo {
+    position: absolute; /* Vị trí tuyệt đối */
+    border-radius: 40%; /* Bo tròn góc của logo */
+    top: 15px; /* Đặt cách cạnh trên 15px */
+    left: 10px; /* Đặt cách cạnh trái 10px */
+}
+
+.Product .PRO {
+    margin: 5px; /* Khoảng cách ngoài giữa các sản phẩm */
+    background-color: #bd7979; /* Màu nền của sản phẩm */
+    padding: 20px; /* Khoảng cách bên trong sản phẩm */
+    border-radius: 5px; /* Bo tròn góc của khối sản phẩm */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ cho sản phẩm */
+    display: flex; /* Sử dụng Flexbox để sắp xếp các phần tử con */
+    flex-direction: column; /* Sắp xếp phần tử con theo cột */
+    align-items: center; /* Căn giữa các phần tử con theo trục ngang */
+    text-align: center; /* Căn giữa văn bản */
+    line-height: 0; /* Đặt khoảng cách giữa các dòng bằng 0 */
+}
+
+.Product .PRO h3 {
+    color: #111010; /* Màu chữ của tiêu đề là màu tối */
+    margin-top: 0; /* Bỏ khoảng cách trên của tiêu đề */
+}
+
+.end {
+    display: flex; /* Sử dụng Flexbox để căn chỉnh nội dung */
+    background-color: rgb(45, 32, 32); /* Màu nền là màu đen xám */
+    color: rgb(205, 239, 239); /* Màu chữ là màu trắng */
+}
+
+.add_botton {
+    background-color: #73d273; /* Màu nền của nút */
+    border: none; /* Không có đường viền cho nút */
+    color: rgb(248, 245, 245); /* Màu chữ là màu trắng */
+    padding: 10px 40px; /* Khoảng cách bên trong nút */
+    text-align: center; /* Căn giữa văn bản trong nút */
+    text-decoration: none; /* Không có gạch chân */
+    display: inline-block; /* Hiển thị như một phần tử inline */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột vào */
+    border-radius: 4px; /* Bo tròn góc của nút */
+    transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển màu nền khi hover */
+}
+
+.add_botton:hover {
+    background-color: #45a049; /* Màu nền khi hover vào nút */
+}
+
+/* Định dạng menu cấp 1 */
+.hhh {
+    position: relative;
+    margin: 30px 0; /* Khoảng cách ngoài cho mục menu */
+    list-style-type: none; /* Loại bỏ dấu chấm đầu dòng */
+    border: 2px solid #333; /* Đường viền đen dày 2px */
+    background-color: #bd7979; /* Màu nền là màu đỏ hồng */
+    border-radius: 20px; /* Bo tròn góc của menu */
+    top: 1px;
+}
+
+.hhh > a {
+    display: block; /* Hiển thị như một khối */
+    padding: 20px 20px; /* Khoảng cách bên trong mục menu */
+    text-decoration: none; /* Không có gạch chân */
+    color: #333; /* Màu chữ đen */
+}
+
+/* Định dạng menu cấp 2 */
+.hhh .tong {
+    display: none; /* Ẩn menu con */
+    position: absolute; /* Vị trí tuyệt đối so với mục cha */
+    top: 100%; /* Hiển thị bên dưới mục cha */
+    background-color: #a89797; /* Màu nền xám nhạt */
+    padding: 10px 0; /* Khoảng cách bên trong */
+    z-index: 1; /* Độ ưu tiên hiển thị */
+    border-radius: 20px; /* Bo tròn góc */
+    border: 2px solid black; /* Đường viền đen */
+    left: 100px; /* Đặt cách cạnh trái 100px */
+}
+
+.hhh .tong li {
+    list-style-type: none; /* Loại bỏ dấu chấm đầu dòng của các mục con trong menu cấp 2 */
+}
+
+.hhh .tong a {
+    display: block; /* Hiển thị liên kết như một khối */
+    padding: 5px 20px; /* Khoảng cách bên trong liên kết */
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+    color: #0f0101; /* Màu chữ đen tối */
+    border-radius: 20px; /* Bo tròn góc của liên kết */
+    border: 2px solid black; /* Đường viền đen dày 2px cho liên kết */
+}
+
+/* Hiển thị menu cấp 2 khi hover trên menu cấp 1 */
+.hhh:hover .tong {
+    display: block; /* Hiển thị menu con khi di chuột vào menu cấp 1 */
+}
+
+/* Định dạng hover cho menu */
+.hhh > a:hover,
+.hhh .tong a:hover {
+    background-color: #e6e6e6; /* Thay đổi màu nền thành xám nhạt khi hover vào menu hoặc mục con */
+    border-radius: 20px; /* Bo tròn góc của mục khi hover */
+}
+
+.Category {
+    position: relative; /* Vị trí tương đối */
+    border: 2px solid #111010; /* Đường viền đen dày 2px cho khối Category */
+    background-color: rgb(112, 198, 198); /* Màu nền xanh lam nhạt */
+    display: flex; /* Sử dụng Flexbox để căn chỉnh */
+    flex-direction: column; /* Sắp xếp các phần tử theo cột */
+    font-size: 30px; /* Kích thước chữ là 30px */
+    height: 100%; /* Chiều cao cố định 735px */
+    margin-bottom: 7px; /* Khoảng cách dưới là 7px */
+}
+
+.ul1 {
+    position: absolute;
+    display: block; /* Hiển thị danh sách dưới dạng khối */
+    margin-inline-start: 5px; /* Khoảng cách trái của danh sách là 5px */
+    margin-inline-end: 5px; /* Khoảng cách phải của danh sách là 5px */
+    padding-inline-start: 0; /* Loại bỏ khoảng cách thụt đầu dòng của danh sách */
+    width: 95%;
+}
